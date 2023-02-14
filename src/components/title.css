@@ -1,0 +1,14 @@
+.title {
+  @apply text-[#343434] font-bold text-4xl;
+}
+.title[data-size="2xl"] {
+  @apply text-[68px];
+}
+
+.title[data-typo="custom"] {
+  @apply text-2xl uppercase font-normal;
+}
+
+.title-banner {
+  @apply text-[#343434] font-bold text-7xl;
+}

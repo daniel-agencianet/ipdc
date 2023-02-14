@@ -1,0 +1,30 @@
+/* Estrutura */
+.btn {
+  --default-color: black;
+
+  @apply font-sans rounded uppercase border border-solid border-transparent py-3 px-6;
+  @apply tracking-[2px] font-semibold text-xs transition duration-300;
+
+  border-color: var(--default-color);
+  color: var(--default-text, white);
+  background-color: var(--default-color);
+}
+
+/* Theme */
+.btn-primary {
+  @apply bg-primary text-white border-primary tracking-[2px];
+}
+
+/* Modificador */
+.btn-primary[data-theme="outline"] {
+  @apply bg-white text-primary border-primary;
+}
+
+/* Estados */
+.btn-primary:where(:hover, :focus) {
+  @apply bg-white text-primary border-primary;
+}
+
+.btn-primary[data-theme="outline"]:where(:hover, :focus) {
+  @apply bg-primary text-white border-primary;
+}

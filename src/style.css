@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+* html { font-size: 100%; }
+* body { font-size: 16px; font-size: 1rem; line-height: 1; }
+* 4px    	0.25rem
+* 8px		  0.5rem
+* 12px		0.75rem
+* 14px		0.875rem
+* 16px		1rem
+* 18px		1.125rem
+* 20px		1.25rem
+* 22px		1.375rem
+* 24px		1.5rem
+* 32px		2rem
+* 36px		2.25rem
+* 48px		3rem
+* 64px		4rem
+* 72px		4.5rem
+*/
+
+/* custom */
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/src/assets/fonts/metropolis.regular.otf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/src/assets/fonts/metropolis.semibold.otf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("/src/assets/fonts/metropolis.bold.otf") format("truetype");
+  font-weight: 700;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: min(100% - 2rem, 90rem);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}

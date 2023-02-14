@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox VS Grid Layout</title>
+  </head>
+
+  <!-- prettier-ignore -->
+  <% const items = [
+    { title: "Home" },
+    { title: "Quem Somos" }, 
+    { title: "Serviços" },
+    { title: "Galeria" },
+    { title: "Contato" },
+  ]; %>
+
+  <body>
+    <main>
+      <header class="absolute z-10 w-full">
+        <div class="container py-12">
+          <div class="flex gap-12 items-center justify-between">
+            <div>
+              <img src="/src/assets/logo.png" alt="" />
+            </div>
+
+            <div class="">
+              <ul class="flex gap-10 font-semibold text-xs tracking-[2px]">
+                <li><a href="">RETAIL</a></li>
+                <li><a href="">SME</a></li>
+                <li><a href="">CORPORATE</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">COVID 19</a></li>
+                <li><a href="">CAMPGAINS</a></li>
+              </ul>
+            </div>
+
+            <div class="flex items-center gap-10">
+              <div>
+                <img src="/src/assets/search.png" class="" alt="" />
+              </div>
+              <div>
+                <button class="btn btn-primary">!SERVICE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- banner -->
+
+      <section class="relative h-[90vh]">
+        <!-- fundo absoluto -->
+
+        <div class="bg-primary-200 absolute h-full w-1/2 right-0"></div>
+
+        <div class="absolute w-[70%] h-full right-0">
+          <div
+            class="h-full bg-no-repeat bg-[length:90%] bg-right translate-y-20"
+            style="background-image: url(/src//assets/banner.png)"
+          ></div>
+        </div>
+
+        <div class="container h-full justify-between">
+          <div class="flex relative h-full">
+            <div class="basis-1/2 self-center">
+              <div>
+                <h1 class="title-banner pt-32">Chase Your Dram with us</h1>
+                <p class="w-[40ch] pt-6">
+                  The harder you work for something, the greater you'll feel when you achieve it.
+                </p>
+              </div>
+              <div class="flex gap-4 py-10">
+                <button class="btn btn-primary">APPLY ONLINE</button>
+                <button class="btn btn-primary" data-theme="outline">LOAN CACLULATOR</button>
+              </div>
+
+              <div class="flex pt-40">
+                <img src="/src/assets/call.png" alt="" />
+                <p class="font-bold ml-5 tracking-[2px]">16519</p>
+
+                <div class="border border-solid border-r border-gray-200 ml-2"></div>
+
+                <div class="">
+                  <ul class="flex gap-3">
+                    <li>
+                      <a href=""><img src="/src//assets/facebook.png" alt="facebook" /></a>
+                    </li>
+                    <li>
+                      <a href=""><img src="/src/assets/youtube.png" alt="youtube" /></a>
+                    </li>
+                    <li>
+                      <a href=""><img src="/src/assets/linkedin.png" alt="linkedin" /></a>
+                    </li>
+                    <li>
+                      <a href=""><img src="/src/assets/instagram.png" alt="instagram" /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="pt-36">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="title">Crating Extraordinary Customer Experience</h2>
+            <p class="pt-12">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ex distinctio mollitia blanditiis
+              delectus eaque rem iure cum tenetur vitae omnis laborum iste, harum quis numquam! Ab iure blanditiis
+              ullam.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
