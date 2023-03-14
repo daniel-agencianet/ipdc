@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flexbox VS Grid Layout</title>
+    <title>Ipdc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
   </head>
 
   <!-- prettier-ignore -->
@@ -16,6 +17,26 @@
     { title: "Contato" },
   ]; %>
 
+  <!-- prettier-ignore -->
+  <% const servicos = [
+    { src: "service-1.png", titulo: "IPDC SAVING SCHEMES", icone: "fa fa-arrow-right" },
+    { src: "service-2.png", titulo: "IPDC PERSONAL LOAN", icone: "fa fa-arrow-right" },
+    { src: "service-3.png", titulo: "IPDC DEPOSIT SCHEMES", icone: "fa fa-arrow-right" },
+    { src: "service-4.png", titulo: "IPDC AUTO LOAN", icone: "fa fa-arrow-right" },
+  ]; %>
+
+  <!-- prettier-ignore -->
+  <% const resultados = [
+      { titulo: "57.6 bn", texto: "LOAN PORTFOLIO", ativo: true },
+      { titulo: "0.95%", texto: "CLASSIFIED LOAN PORTFOLIO" },
+      { titulo: "388.5%", texto: "CLASSIFIED LOAN COVERAGE" },
+      { titulo: "50.4 bn", texto: "DEPOSIT" },
+      { titulo: "6.1 bn", texto: "SHAREHOLDERS EQUITY",},
+      { titulo: "18.51%", texto: "CAPITAL ADEQUACY RATIO" },
+      { titulo: "8.5 bn", texto: "MARKET CAPITALIZATION" },
+      { titulo: "AAA", texto: "CREDIT RATING" },
+    ]; %>
+
   <body>
     <main>
       <header class="absolute z-10 w-full">
@@ -26,21 +47,28 @@
             </div>
 
             <div class="">
-              <ul class="flex gap-10 font-semibold text-xs tracking-[2px]">
-                <li><a href="">RETAIL</a></li>
-                <li><a href="">SME</a></li>
-                <li><a href="">CORPORATE</a></li>
-                <li><a href="">ABOUT US</a></li>
-                <li><a href="">COVID 19</a></li>
-                <li><a href="">CAMPGAINS</a></li>
-              </ul>
+              <nav class="nav-primary" id="nav-primary" aria-label="primary">
+                <ul class="flex gap-10 font-semibold text-xs tracking-[2px]">
+                  <li><a href="">RETAIL</a></li>
+                  <li><a href="">SME</a></li>
+                  <li><a href="">CORPORATE</a></li>
+                  <li><a href="">ABOUT US</a></li>
+                  <li><a href="">COVID 19</a></li>
+                  <li><a href="">CAMPGAINS</a></li>
+                </ul>
+              </nav>
             </div>
 
             <div class="flex items-center gap-10">
               <div>
                 <img src="/src/assets/search.png" class="" alt="" />
               </div>
-              <div>
+
+              <button id="menu-button-toggler" class="lg:hidden" aria-label="alterna-navegação">
+                <i class="fa fa-bars text-xl"></i>
+              </button>
+
+              <div class="hidden xl:block">
                 <button class="btn btn-primary">!SERVICE</button>
               </div>
             </div>
@@ -49,54 +77,91 @@
       </header>
 
       <!-- banner -->
+      <section>
+        <div class="relative h-[97vh] min-h-[780px]">
+          <!-- fundo absoluto -->
+          <div class="bg-primary-200 absolute h-full w-1/2 right-0 hidden md:block"></div>
 
-      <section class="relative h-[90vh]">
-        <!-- fundo absoluto -->
+          <!-- imagem absoluta -->
+          <div class="absolute w-[70%] h-full right-0 hidden md:block">
+            <div
+              class="h-full bg-no-repeat bg-[length:90%] bg-right translate-y-40 lg:translate-y-20"
+              style="background-image: url(/src/assets/banner.png)"
+            ></div>
+          </div>
 
-        <div class="bg-primary-200 absolute h-full w-1/2 right-0"></div>
+          <!-- badges absoluto -->
 
-        <div class="absolute w-[70%] h-full right-0">
-          <div
-            class="h-full bg-no-repeat bg-[length:90%] bg-right translate-y-20"
-            style="background-image: url(/src//assets/banner.png)"
-          ></div>
-        </div>
-
-        <div class="container h-full justify-between">
-          <div class="flex relative h-full">
-            <div class="basis-1/2 self-center">
-              <div>
-                <h1 class="title-banner pt-32">Chase Your Dram with us</h1>
-                <p class="w-[40ch] pt-6">
-                  The harder you work for something, the greater you'll feel when you achieve it.
-                </p>
+          <div class="absolute h-full w-1/2 right-0 hidden md:block">
+            <div class="absolute top-[15%] -translate-x-[35%]">
+              <div class="inline-flex shadow-xl items-center gap-5 bg-white rounded-full py-5 px-6">
+                <img src="/src/assets/car.png" alt="" />
+                <span class="font-bold text-lg">Car Loans</span>
               </div>
-              <div class="flex gap-4 py-10">
-                <button class="btn btn-primary">APPLY ONLINE</button>
-                <button class="btn btn-primary" data-theme="outline">LOAN CACLULATOR</button>
+            </div>
+
+            <div class="absolute top-[33%] right-20">
+              <div class="inline-flex shadow-xl items-center gap-5 bg-white rounded-full py-5 px-6">
+                <img src="/src/assets/home.png" alt="" />
+                <span class="font-bold text-lg">Home Loan</span>
               </div>
+            </div>
+          </div>
 
-              <div class="flex pt-40">
-                <img src="/src/assets/call.png" alt="" />
-                <p class="font-bold ml-5 tracking-[2px]">16519</p>
+          <!-- indicators-absolute -->
+          <div class="absolute w-full h-1/4 bottom-0 md:h-full md:w-1/2 md:right-0">
+            <div
+              class="absolute top-1/2 xl:top-[65%] left-1/2 -translate-x-1/2 md:left-auto md:transform-none md:right-16"
+            >
+              <div class="flex md:flex-col gap-4">
+                <span class="rounded-full bg-primary w-3 h-3"></span>
+                <span class="rounded-full bg-black/20 w-2 h-2"></span>
+                <span class="rounded-full bg-black/20 w-2 h-2"></span>
+                <span class="rounded-full bg-black/20 w-2 h-2"></span>
+              </div>
+            </div>
+          </div>
 
-                <div class="border border-solid border-r border-gray-200 ml-2"></div>
+          <div class="container h-full relative">
+            <div class="h-full flex w-full md:w-1/2">
+              <div class="flex flex-col gap-10 justify-center h-full w-full">
+                <div class="mt-auto">
+                  <h1 class="title-banner max-w-[12ch]" id="title">Chase Your Dream with us</h1>
 
-                <div class="">
-                  <ul class="flex gap-3">
-                    <li>
-                      <a href=""><img src="/src//assets/facebook.png" alt="facebook" /></a>
-                    </li>
-                    <li>
-                      <a href=""><img src="/src/assets/youtube.png" alt="youtube" /></a>
-                    </li>
-                    <li>
-                      <a href=""><img src="/src/assets/linkedin.png" alt="linkedin" /></a>
-                    </li>
-                    <li>
-                      <a href=""><img src="/src/assets/instagram.png" alt="instagram" /></a>
-                    </li>
-                  </ul>
+                  <div class="max-w-[35ch]">
+                    <p class="mt-6">The harder you work for something, the greater you'll feel when you achieve it.</p>
+
+                    <div class="flex flex-wrap gap-4 mt-10">
+                      <button class="btn btn-primary">APPLY ONLINE</button>
+                      <button class="btn btn-primary" data-theme="outline">LOAN CAlCULATOR</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-auto">
+                  <div class="flex">
+                    <img src="/src/assets/call.png" alt="" />
+                    <p class="font-bold ml-5 tracking-[2px] text-[var(--title-color)]">16519</p>
+
+                    <div class="border border-solid border-r border-gray-200 ml-2"></div>
+
+                    <div class="">
+                      <ul class="flex gap-3">
+                        <li>
+                          <a href=""><img src="/src//assets/facebook.png" alt="facebook" /></a>
+                        </li>
+                        <li>
+                          <a href=""><img src="/src/assets/youtube.png" alt="youtube" /></a>
+                        </li>
+                        <li>
+                          <a href=""><img src="/src/assets/linkedin.png" alt="linkedin" /></a>
+                        </li>
+                        <li>
+                          <a href=""><img src="/src/assets/instagram.png" alt="instagram" /></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,18 +170,284 @@
       </section>
 
       <!-- Experience -->
-      <section class="pt-36">
-        <div class="container">
-          <div class="text-center">
-            <h2 class="title">Crating Extraordinary Customer Experience</h2>
-            <p class="pt-12">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ex distinctio mollitia blanditiis
-              delectus eaque rem iure cum tenetur vitae omnis laborum iste, harum quis numquam! Ab iure blanditiis
-              ullam.
-            </p>
+      <section>
+        <div class="py-10 md:py-14 xl:py-20 2xl:py-28">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="title">Crating Extraordinary Customer Experience</h2>
+              <p class="mt-10 md:mt-12">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulllam bibendum eget morbi <br />
+                dignissim eu pharetra consequat montes, sagittis.
+              </p>
+            </div>
+
+            <div class="mt-10 md:mt-24">
+              <div class="flex flex-wrap justify-center gap-10 lg:gap-20">
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/integrity.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Integrity</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/demonstrate.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Demonstrate</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/diversity.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Diversity</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/teamwork.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Teamwork</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap justify-center gap-10 lg:gap-20 mt-10 md:mt-20">
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/collaboration.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Collaboration</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/technology.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Technology</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/corporate.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Corporate</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+                <div class="lg:flex-1 basis-[300px] flow">
+                  <img src="/src/assets/digital.png" alt="" />
+                  <h2 class="title sm-down:[--flow-space:.3em]" data-size="sm">Digital</h2>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ipsa quae optio ad.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- parceria -->
+      <section>
+        <div>
+          <div class="container">
+            <div class="text-center">
+              <h2 class="text-2xl">BUSINESS PARTNERS</h2>
+            </div>
+
+            <div class="mt-10 md:mt-24">
+              <ul class="flex flex-wrap justify-between">
+                <li><img src="/src/assets/westin.png" alt="" /></li>
+                <li><img src="/src/assets/ummit.png" alt="" /></li>
+                <li><img src="/src/assets/holcim.png" alt="" /></li>
+                <li><img src="/src/assets/etv.png" alt="" /></li>
+              </ul>
+            </div>
+
+            <div class="flex gap-4 justify-center items-center mt-10 md:mt-24">
+              <span class="rounded-full bg-primary w-3 h-3"></span>
+              <span class="rounded-full bg-black/20 w-2 h-2"></span>
+              <span class="rounded-full bg-black/20 w-2 h-2"></span>
+              <span class="rounded-full bg-black/20 w-2 h-2"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- quem somos -->
+      <section>
+        <div class="pt-10 md:pt-14 xl:pt-20 2xl:pt-28">
+          <div class="container" data-wide>
+            <div class="flex flex-col lg:flex-row lg:items-center gap-12 xl:gap-28">
+              <div class="2xl:shrink-0">
+                <img
+                  src="/src/assets/ipdc.png"
+                  alt="mudinha dentro de uma nota de 50 euros"
+                  class="h-[400px] lg:h-auto w-full object-cover object-top"
+                />
+              </div>
+
+              <div class="">
+                <div class="lg:max-w-[40ch] 2xl:max-w-none">
+                  <h2 class="title">IPDC AT A GLANCE</h2>
+                  <p class="leading-7 mt-3 md:mt-10">
+                    IPDC Finance Limited (previously known as "Industrial Promotion and Development Company of
+                    Bangladesh Limited") is the first private sector financial institution of the country established in
+                    1981 by a distinguished group of shareholders namely International Finance Corporation (IFC), USA,
+                    German Investment and Development Company (DEG), Germany, The Aga Khan Fund for Economic Development
+                    (AKFED), Switzerland, Commonwealth Development Corporation (CDC), UK and the Government of
+                    Bangladesh.
+                  </p>
+
+                  <a href="#" class="text-primary mt-10 text-lg inline-block">
+                    Read More <i class="fa-sharp fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="bg-[#FEF9FC] py-10 md:py-14 xl:py-20 2xl:py-28">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="title">Our Services</h2>
+              <p class="mt-6">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Diam, dapibus mattis vel feugiat erat tortor
+                eleifend.
+              </p>
+            </div>
+            <div class="flex flex-wrap mt-16 justify-center gap-8 xl:gap-12">
+              <% servicos.forEach(servico => { %>
+
+              <div class="lg:flex-1">
+                <img src="src/assets/<%= servico.src %>" class="w-full" alt="<%= servico.titulo %>" />
+                <div class="flex gap-5 xl:gap-20 items-center mt-3 md:mt-10">
+                  <h3 class="text-base xl:text-xl font-bold xl:basis-[195px]">
+                    <a href="#" class="text-[var(--title-color)]"><%= servico.titulo %> </a>
+                  </h3>
+                  <div class="bg-primary-200 rounded-full px-3 py-2">
+                    <span class="<%= servico.icone %> text-primary text-xl"></span>
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="py-10 md:py-14 xl:py-20 2xl:py-28">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="title">Our best results for the year</h2>
+              <p class="mt-5 max-w-[80ch] mx-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates earum at corrupti vero delectus
+                culpa! Laborum similique delectus optio enim!
+              </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center mt-20 gap-y-14 gap-x-[160px]">
+              <% resultados.forEach(resultado => { %>
+              <div class="xl:grow basis-[172px]">
+                <h3 class="title" style="<%= resultado.ativo ? '--title-color: var(--primary)' : '' %>">
+                  <%= resultado.titulo %>
+                </h3>
+                <p class="mt-2"><%= resultado.texto %></p>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="py-10 md:py-14 xl:py-20 2xl:py-28 bg-[#FEF9FC]">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="title">Newsletter</h2>
+              <p class="mt-5 max-w-[50ch] mx-auto">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates earum at corrupti vero delectus.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 justify-center mt-12">
+              <input type="email" placeholder="Your email" aria-label="Your email" />
+
+              <button class="btn btn-primary">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="py-10 md:py-14 xl:py-20 2xl:py-28">
+          <div class="container">
+            <div class="flex flex-wrap gap-y-5 lg:gap-10">
+              <div class="flex-1 basis-40 px-5">
+                <h2 class="title" data-size="xs">About the company</h2>
+                <p class="mt-5">Learn To love Growth And Change And You Will Be A Success. Microsoft Patch</p>
+
+                <div class="mt-10">
+                  <ul class="flex gap-3">
+                    <li>
+                      <a aria-label="facebook" href="#" target="_blank">
+                        <img src="/src/assets/facebook.png" alt="facebook"
+                      /></a>
+                    </li>
+                    <li>
+                      <a aria-label="youtube" href="#" target="_blank">
+                        <img src="/src/assets/youtube.png" alt="youtube"
+                      /></a>
+                    </li>
+                    <li>
+                      <a aria-label="linkedin" href="#" target="_blank">
+                        <img src="/src/assets/linkedin.png" alt="linkedin"
+                      /></a>
+                    </li>
+                    <li>
+                      <a aria-label="instagram" href="#" target="_blank">
+                        <img src="/src/assets/instagram.png" alt="instagram"
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex-1 basis-40 px-5">
+                <h2 class="title" data-size="xs">Products</h2>
+
+                <ul class="mt-5 leading-loose">
+                  <li><a href="#">CSR Activities</a></li>
+                  <li><a href="#">Green Banking</a></li>
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Ongoing Campgain</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+
+              <div class="flex-1 basis-40 px-5">
+                <h2 class="title" data-size="xs">Products</h2>
+
+                <ul class="mt-5 leading-loose">
+                  <li><a href="#">CSR Activities</a></li>
+                  <li><a href="#">Green Banking</a></li>
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Ongoing Campgain</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+
+              <div class="flex-1 basis-40 px-5">
+                <h2 class="title" data-size="xs">Products</h2>
+
+                <ul class="mt-5 leading-loose">
+                  <li><a href="#">CSR Activities</a></li>
+                  <li><a href="#">Green Banking</a></li>
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Ongoing Campgain</a></li>
+                  <li><a href="#">Updates</a></li>
+                </ul>
+              </div>
+
+              <div class="flex-1 basis-40 px-5">
+                <div class="flex">
+                  <img src="/src/assets/call.png" alt="" />
+                  <a href="tel:" class="font-bold ml-3 tracking-[2px] text-[var(--title-color)]">16519</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <script type="module" src="/src/main.ts"></script>

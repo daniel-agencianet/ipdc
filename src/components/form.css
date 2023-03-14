@@ -1,5 +1,5 @@
 input:where([type="text"], [type="email"]) {
-  @apply bg-white border border-solid border-black/20 rounded py-3 px-4 min-w-[320px] max-w-full;
+  @apply bg-white border border-solid border-black/20 rounded py-3 px-4 md:min-w-[320px] max-w-full;
   @apply placeholder:text-black/20 placeholder:capitalize;
 }
 

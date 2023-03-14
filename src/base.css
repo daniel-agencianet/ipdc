@@ -1,0 +1,13 @@
+:root {
+  --primary: #ed017f;
+  --title-color: #343434;
+}
+
+a:where(:hover, :focus-visible) {
+  color: var(--primary);
+}
+
+p,
+a {
+  @apply text-neutral-500;
+}

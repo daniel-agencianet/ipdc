@@ -1,0 +1,32 @@
+.nav-primary {
+  @apply hidden lg:block;
+}
+
+.nav-primary a {
+  color: var(--title-color);
+}
+
+/* mobile */
+
+.nav-primary.active {
+  @apply bg-neutral-200 p-8;
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
+
+.nav-primary.active ul {
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+@media (min-width: 1024px) {
+  .nav-primary {
+    position: static !important;
+    background-color: transparent !important;
+  }
+  .nav-primary ul {
+    flex-direction: row !important;
+  }
+}
